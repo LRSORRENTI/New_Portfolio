@@ -526,6 +526,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 10px;
+  gap: 1.8rem;
 }
 
 .navbar-link {
