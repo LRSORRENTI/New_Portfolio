@@ -20,7 +20,7 @@
   --light-salt: rgba(113, 128, 150, 1);
   --salt: rgba(161, 174, 193, 1);
   /* --blue: rgba(59, 130, 246, 1); */
-  --blue: rgb(114, 168, 253);
+  --blue: #72a8fd;
   --alpha: rgba(45, 55, 72, 0);
 
   /* gradient */
@@ -373,7 +373,8 @@ main {
 .info-content .name {
   /* color: var(--white); */
   /* font-size: 72px; */
-  background: -webkit-linear-gradient(#eee, var(--blue));
+  background-image:  linear-gradient(90deg, #72a8fd, #abd8ff 50%, #8bfaeb);
+  /* background: -webkit-linear-gradient(#eee, var(--blue)); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* background: #EEEEEE;
@@ -855,7 +856,8 @@ main {
 
 .article-title {
   margin-bottom: 30px;
-  background: -webkit-linear-gradient(#eee, var(--blue));
+
+  background: -webkit-linear-gradient(#eee 18%, var(--blue) 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* background: #EEEEEE;
