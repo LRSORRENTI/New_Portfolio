@@ -36,6 +36,13 @@
   </head>
 
   <body>
+    <svg width="0" height="0">
+      <filter id="blur-and-scale" y="-50%" x="-50%" width="200%" height="200%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blurred" />
+        <feColorMatrix type="saturate" in="blurred" values="1.2" />
+        <feComposite in="SourceGraphic" operator="over" />
+      </filter>
+    </svg>
     <!--
     - #MAIN
   -->
@@ -514,60 +521,78 @@
         -->
 
           <section class="clients">
-            <h3 class="h3 clients-title">Clients</h3>
-
+            <h3 class="h3 clients-title">Technologies Used</h3>
             <ul class="clients-list has-scrollbar">
               <li class="clients-item">
-                <a href="#">
+                <a href="https://www.figma.com/design/" target="_blank">
                   <img
-                    src="./assets/images/logo-1-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a href="https://html.spec.whatwg.org/" target="_blank">
                   <img
-                    src="./assets/images/logo-2-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a
+                  href="https://www.w3.org/Style/CSS/Overview.en.html"
+                  target="_blank"
+                >
                   <img
-                    src="./assets/images/logo-3-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                >
                   <img
-                    src="./assets/images/logo-4-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a href="https://react.dev/" target="_blank">
                   <img
-                    src="./assets/images/logo-5-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a href="https://www.python.org/" target="_blank">
                   <img
-                    src="./assets/images/logo-6-color.png"
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Python_logo_01.svg"
                     alt="client logo"
                   />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="https://www.mysql.com/" target="_blank">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/fr/6/62/MySQL.svg"
+                    alt="client logo"
+                  />
+                </a>
+              </li>
+              <li class="clients-item">
+                <a href="https://wordpress.org/" target="_blank">
+                  <img src="./assets/images/wp.svg" alt="client logo" />
                 </a>
               </li>
             </ul>

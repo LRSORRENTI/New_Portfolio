@@ -386,6 +386,11 @@ main {
   letter-spacing: 2px;
   margin-bottom: 1px;
   margin-left: 3px;
+  /* filter: url(#blur-and-scale); */
+}
+
+.filter-blur {
+  filter: url(#blur-and-scale);
 }
 
 .info-content .title {
@@ -844,14 +849,27 @@ main {
   scroll-snap-align: start;
 }
 
-.clients-item img {
+/* .clients-item img {
   width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
+  max-height: 100px;
+  filter: url(#blur-and-scale);
 }
 
 .clients-item img:hover {
-  filter: grayscale(0);
+  filter: none;
+} */
+.clients-item img {
+  width: 100%;
+  max-height: 100px;
+  /* filter: grayscale(1); */
+  -webkit-tap-highlight-color: transparent;
+  transition: filter 0.9s ease-in-out !important;
+}
+
+.clients-item img:hover {
+  -webkit-tap-highlight-color: transparent;
+  /* filter: grayscale(0) !important; */
+  filter: url(#blur-and-scale);
 }
 
 /*-----------------------------------*\
@@ -861,7 +879,7 @@ main {
 .article-title {
   font-size: 30px;
   margin-bottom: 30px;
-
+  /* filter: url(#blur-and-scale); */
   background: -webkit-linear-gradient(#eee 18%, var(--blue) 60%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
