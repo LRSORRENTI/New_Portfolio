@@ -842,7 +842,37 @@ main {
   overscroll-behavior-inline: contain;
   scroll-snap-type: inline mandatory;
   scroll-padding-inline: 25px;
+  /* UNCOMMNENT BELOW AND JS file lines 170 - 198 
+  TO ADD BACK IN GRAB SELECT FUNCTIONALITY */
+  /* cursor: grab; 
+  user-select: none; 
+  -webkit-overflow-scrolling: touch;  */
 }
+
+/* 
+.clients-list:active {
+  cursor: grabbing;
+}
+
+
+
+.clients-list {
+  display: flex;
+  overflow-x: auto;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+
+}
+
+.clients-list:active {
+  cursor: grabbing;
+}
+
+
+.clients-list.dragging .clients-item {
+  pointer-events: none; 
+} */
 
 .clients-item {
   min-width: 50%;
@@ -1669,13 +1699,6 @@ textarea.form-input::-webkit-resizer {
   }
 
   /* clients */
-
-  .clients-list {
-    gap: 50px;
-    margin: 0 -30px;
-    padding: 45px;
-    scroll-padding-inline: 45px;
-  }
 
   .clients-item {
     min-width: calc(33.33% - 35px);

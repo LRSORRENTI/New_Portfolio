@@ -163,3 +163,36 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// UNCOMMENT BELOW FOR GRAB SELECT ON TECHNOLOGIES USED,
+// ALSO NEED TO UNCOMMENT LINES 845 - 874 in stylesheet
+
+// const clientsList = document.querySelector('.clients-list');
+// let isDown = false;
+// let startX;
+// let scrollLeft;
+
+// clientsList.addEventListener('mousedown', (e) => {
+//   isDown = true;
+//   clientsList.classList.add('active', 'dragging'); // Add 'dragging' class
+//   startX = e.pageX - clientsList.offsetLeft;
+//   scrollLeft = clientsList.scrollLeft;
+// });
+
+// clientsList.addEventListener('mouseleave', () => {
+//   isDown = false;
+//   clientsList.classList.remove('active', 'dragging'); // Remove 'dragging' class
+// });
+
+// clientsList.addEventListener('mouseup', () => {
+//   isDown = false;
+//   clientsList.classList.remove('active', 'dragging'); // Remove 'dragging' class
+// });
+
+// clientsList.addEventListener('mousemove', (e) => {
+//   if (!isDown) return;
+//   e.preventDefault();
+//   const x = e.pageX - clientsList.offsetLeft;
+//   const walk = (x - startX) * 1;
+//   clientsList.scrollLeft = scrollLeft - walk;
+// });
