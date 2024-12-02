@@ -231,6 +231,25 @@ article {
   --ionicon-stroke-width: 35px;
 }
 
+#sql-logo {
+    margin-top: 15px;
+}
+
+#php-logo {
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #sql-logo {
+    margin-top: 0px;
+  }
+  #php-logo {
+    margin-top: 0px;
+    margin-left: 20px;
+  }
+}
+
+
 article {
   display: none;
 }
