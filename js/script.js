@@ -121,11 +121,6 @@ const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
 
-formBtn.addEventListener("click", function() {
-  window.location.href = "mailto:luke-sorrenti@outlook.com";
-});
-
-
 // add event to all form input field
 for (let i = 0; i < formInputs.length; i++) {
   formInputs[i].addEventListener("input", function () {
@@ -163,6 +158,53 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// BELOW IS THE MODAL JS
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".form");
+  const modal = document.getElementById("emailModal");
+  const cancelBtn = document.getElementById("cancelBtn");
+  const confirmBtn = document.getElementById("confirmBtn");
+
+  let mailtoLink = "";
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault(); // Stop default form submission
+
+    const name = document.querySelector("input[name='fullname']").value;
+    const email = document.querySelector("input[name='email']").value;
+
+    if (!name || !email) {
+      alert("Please fill out both fields before sending.");
+      return;
+    }
+
+    // Construct mailto link
+    mailtoLink = `mailto:${encodeURIComponent(email)}?subject=Contact%20Form&body=Hello,%20my%20name%20is%20${encodeURIComponent(name)}.%20I%20would%20like%20to%20contact%20you.`;
+
+    // Show modal (this prevents the form from proceeding immediately)
+    modal.style.display = "flex";
+  });
+
+  cancelBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  confirmBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+    window.location.href = mailtoLink; // Execute mailto only when the user confirms
+  });
+
+  // Close modal if clicking outside
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
+
 
 // UNCOMMENT BELOW FOR GRAB SELECT ON TECHNOLOGIES USED,
 // ALSO NEED TO UNCOMMENT LINES 845 - 874 in stylesheet

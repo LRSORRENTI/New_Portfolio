@@ -2346,20 +2346,27 @@
                 />
               </div>
 
-              <!-- <textarea
-                name="message"
-                class="form-input"
-                placeholder="Your Message"
-                required
-                data-form-input
-              ></textarea> -->
-
               <button class="form-btn" type="submit" disabled data-form-btn>
                 <ion-icon name="paper-plane"></ion-icon>
                 <span>Send Message</span>
               </button>
             </form>
           </section>
+
+          <!-- Modal -->
+          <div id="emailModal" class="modal">
+            <div class="modal-content">
+              <p>Clicking "Email" will open your email client and start a message to Luke. Would you like to continue?</p>
+              <div class="modal-buttons">
+                <button class="modal-btn btn-cancel" id="cancelBtn">
+                  Cancel
+                </button>
+                <button class="modal-btn btn-email" id="confirmBtn">
+                  Email
+                </button>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     </main>
