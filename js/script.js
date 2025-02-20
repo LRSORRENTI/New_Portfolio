@@ -163,7 +163,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // BELOW IS THE MODAL JS
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form");
-  const modal = document.getElementById("emailModal");
+  const modal = document.querySelector(".modal");
   const cancelBtn = document.getElementById("cancelBtn");
   const confirmBtn = document.getElementById("confirmBtn");
 
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mailtoLink = `mailto:${encodeURIComponent(email)}?subject=Contact%20Form&body=Hello,%20my%20name%20is%20${encodeURIComponent(name)}.%20I%20would%20like%20to%20contact%20you.`;
 
     // Show modal (this prevents the form from proceeding immediately)
-    // modal.style.display = "flex";
+    modal.style.display = "flex";
   });
 
   cancelBtn.addEventListener("click", function () {
