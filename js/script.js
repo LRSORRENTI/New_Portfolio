@@ -163,7 +163,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 // BELOW IS THE MODAL JS
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".form");
-  const modal = document.querySelector(".modal");
+  const modal = document.getElementById("emailModal");
   const cancelBtn = document.getElementById("cancelBtn");
   const confirmBtn = document.getElementById("confirmBtn");
 
