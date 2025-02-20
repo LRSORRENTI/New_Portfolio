@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mailtoLink = `mailto:${encodeURIComponent(email)}?subject=Contact%20Form&body=Hello,%20my%20name%20is%20${encodeURIComponent(name)}.%20I%20would%20like%20to%20contact%20you.`;
 
     // Show modal (this prevents the form from proceeding immediately)
-    // modal.style.display = "flex";
+    modal.style.display = "flex";
   });
 
   cancelBtn.addEventListener("click", function () {
