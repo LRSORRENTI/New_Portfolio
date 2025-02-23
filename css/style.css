@@ -406,7 +406,8 @@ main {
   margin-left: 3px;
   /* filter: url(#blur-and-scale); */
 }
-
+/* As a note, this blur is being pulled in via 
+an svg in the index.html line 67ish */
 .filter-blur {
   filter: url(#blur-and-scale);
 }
