@@ -2183,8 +2183,8 @@ textarea.form-input::-webkit-resizer {
 
 .modal-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  justify-content: space-around;
+  margin-top: 25px;
 }
 
 .modal-btn {
