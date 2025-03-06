@@ -23,6 +23,19 @@
   --blue: #72a8fd;
   --alpha: rgba(45, 55, 72, 0);
 
+  --ivory: hsl(40 18% 97%);
+  --font-color: #0a0a0ae6;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.3);
+  --scrollbar-track: transparent;
+  --border-color: hsl(222 0% 86% /38%);
+  --foreground: hsl(0 0% 100%);
+  --radius: 0.5rem;
+  --color-breeze: hsl(214 100% 92%);
+  --color-lightsunset: hsl(23, 100%, 92%);
+  --color-sunset: hsl(22, 100%, 63%);
+
+  --text-gradient: linear-gradient(90deg, #72a8fd, #abd8ff 50%, #d2fff9);
+
   /* gradient */
 
   /* --bg-gradient-onyx: linear-gradient(
@@ -63,6 +76,8 @@
     hsl(45, 100%, 72%),
     hsl(35, 100%, 68%)
   );
+
+  --text-gradient-two: -webkit-linear-gradient(#eee 18%, var(--blue) 60%);
 
   /* solid */
 
@@ -118,6 +133,74 @@
 
   --transition-1: 0.25s ease;
   --transition-2: 0.5s ease-in-out;
+}
+
+/* Light theme variables */
+[data-theme="light"] {
+  --blue: hsl(22, 100%, 63%);
+  --dark-grey: hsl(40 18% 97%); /* a light background color */
+  --dark-slate: #ffffff; /* adjust as needed */
+  --font-color: #0a0a0a; /* dark text color */
+  --ivory: hsl(40 18% 97%);
+  --font-color: #0a0a0ae6;
+  --scrollbar-thumb: rgba(0, 0, 0, 3);
+  --scrollbar-track: transparent;
+  --border-color: hsl(222 0% 86% /38%);
+  --foreground: hsl(0 0 100%);
+  --radius: 0.5rem;
+  --color-breeze: hsl(214 100% 92%);
+  --color-lightsunset: hsl(23, 100%, 92%);
+  --color-sunset: hsl(22, 100%, 63%);
+  --heading-color: #0a0a0ae6;
+  --accent-color: hsl(22, 100%, 63%);
+  --white-2: #0a0a0a;
+  --light-gray: #0a0a0a;
+  --light-gray-70: hsla(0, 0%, 18%, 0.7);
+  --white: hsla(0, 0%, 18%, 0.7);
+  --jet: hsla(0, 0%, 18%, 0.2);
+  --bg-gradient-onyx: linear-gradient(
+    to bottom right,
+    #ffff 0%,
+    hsl(22, 100%, 63%) 50%
+  );
+  --text-gradient: linear-gradient(
+    90deg,
+    var(--color-sunset),
+    var(--color-sunset) 40%,
+    var(--heading-color)
+  );
+  --text-gradient-two: linear-gradient(
+    90deg,
+    var(--color-sunset),
+    #333 40%,
+    #333
+  );
+}
+
+.theme-toggle-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  border: 1px solid red;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 0.3em;
+  left: 1em;
+  padding: 0.3rem;
+  border-radius: var(--radius);
+  /* border: 1px solid var(--border-color); */
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
 }
 
 /*-----------------------------------*\
@@ -180,6 +263,18 @@ html {
 
 body {
   background: var(--dark-grey);
+}
+
+.theme-toggle .light-icon,
+.theme-toggle .dark-icon {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+/* Remove grayscale when hovered */
+.theme-toggle:hover .light-icon,
+.theme-toggle:hover .dark-icon {
+  filter: grayscale(50%);
 }
 
 /*-----------------------------------*\
@@ -391,7 +486,7 @@ main {
 .info-content .name {
   /* color: var(--white); */
   /* font-size: 72px; */
-  background-image: linear-gradient(90deg, #72a8fd, #abd8ff 50%, #d2fff9);
+  background-image: var(--text-gradient);
   /* background: -webkit-linear-gradient(#eee, var(--blue)); */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -929,7 +1024,7 @@ an svg in the index.html line 67ish */
   font-size: 30px;
   margin-bottom: 30px;
   /* filter: url(#blur-and-scale); */
-  background: -webkit-linear-gradient(#eee 18%, var(--blue) 60%);
+  background: var(--text-gradient-two);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* background: #EEEEEE;
@@ -2199,7 +2294,7 @@ textarea.form-input::-webkit-resizer {
 
 .btn-cancel {
   background-color: #fff;
-  color: var(--dark-grey);
+  /* color: var(--dark-grey); */
   transition: 0.4s ease;
   font-weight: 900;
   border: 2px solid #c53030;
@@ -2207,7 +2302,7 @@ textarea.form-input::-webkit-resizer {
 
 .btn-email {
   background-color: #fff;
-  color: var(--dark-grey);
+  /* color: var(--dark-grey); */
   transition: 0.4s ease;
   font-weight: 900;
   border: 2px solid #2f855a;
