@@ -14,7 +14,41 @@ const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 // sidebar toggle functionality for mobile
 sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
+// Theme toggle functionality
+const themeToggle = document.querySelector('.theme-toggle');
+const lightIcon = document.querySelector('.light-icon');
+const darkIcon = document.querySelector('.dark-icon');
 
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+const savedTheme = localStorage.getItem('theme') || (prefersDark.matches ? 'dark' : 'light');
+
+// Function to apply theme and update elements
+const applyTheme = (theme) => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+
+  // Toggle icons
+  lightIcon.style.display = theme === 'dark' ? 'none' : 'inline';
+  darkIcon.style.display = theme === 'dark' ? 'inline' : 'none';
+
+  // Update all service icons dynamically
+  document.querySelectorAll(".service-icon-box img").forEach(img => {
+    const currentSrc = img.getAttribute("src");
+
+    if (theme === "light" && !currentSrc.includes("-sunset")) {
+      img.setAttribute("src", currentSrc.replace(".svg", "-sunset.svg"));
+    } else if (theme === "dark" && currentSrc.includes("-sunset")) {
+      img.setAttribute("src", currentSrc.replace("-sunset.svg", ".svg"));
+    }
+  })
+}
+
+// Function to toggle theme
+const toggleTheme = () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  applyTheme(newTheme);
+};
 
 // testimonials variables
 const testimonialsItem = document.querySelectorAll("[data-testimonials-item]");
@@ -162,6 +196,7 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // BELOW IS THE MODAL JS
 document.addEventListener("DOMContentLoaded", function () {
+  applyTheme(savedTheme);
   const form = document.querySelector(".form");
   const modal = document.getElementById("emailModal");
   const cancelBtn = document.getElementById("cancelBtn");
@@ -204,37 +239,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-// UNCOMMENT BELOW FOR GRAB SELECT ON TECHNOLOGIES USED,
-// ALSO NEED TO UNCOMMENT LINES 845 - 874 in stylesheet
-
-// const clientsList = document.querySelector('.clients-list');
-// let isDown = false;
-// let startX;
-// let scrollLeft;
-
-// clientsList.addEventListener('mousedown', (e) => {
-//   isDown = true;
-//   clientsList.classList.add('active', 'dragging'); // Add 'dragging' class
-//   startX = e.pageX - clientsList.offsetLeft;
-//   scrollLeft = clientsList.scrollLeft;
-// });
-
-// clientsList.addEventListener('mouseleave', () => {
-//   isDown = false;
-//   clientsList.classList.remove('active', 'dragging'); // Remove 'dragging' class
-// });
-
-// clientsList.addEventListener('mouseup', () => {
-//   isDown = false;
-//   clientsList.classList.remove('active', 'dragging'); // Remove 'dragging' class
-// });
-
-// clientsList.addEventListener('mousemove', (e) => {
-//   if (!isDown) return;
-//   e.preventDefault();
-//   const x = e.pageX - clientsList.offsetLeft;
-//   const walk = (x - startX) * 1;
-//   clientsList.scrollLeft = scrollLeft - walk;
-// });
+themeToggle.addEventListener("click", toggleTheme);
