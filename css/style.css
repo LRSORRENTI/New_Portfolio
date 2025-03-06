@@ -177,20 +177,52 @@
   );
 }
 
+/* Ensure the container aligns with <main> */
 .theme-toggle-container {
-  max-width: 1200px;
-  margin-inline: auto;
+  max-width: 1200px; /* Match the max-width of <main> */
+  margin-inline: auto; /* Center the container */
   display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 25px;
-  border: 1px solid red;
+  justify-content: flex-start; /* Align the button to the left */
+  padding-left: 0rem; /* Adjust spacing */
+}
+
+/* Make sure the toggle button remains in place */
+.theme-toggle {
+  padding: 0.3rem;
+  border-radius: var(--radius);
+  color: var(--font-color);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 1250px) {
+  .theme-toggle-container {
+    max-width: 100%; /* Keep it fluid within the page */
+    padding-left: 2rem; /* Adjust alignment dynamically */
+  }
+}
+
+@media (max-width: 1024px) {
+  .theme-toggle-container {
+    padding-left: 1.5rem; /* Fine-tune the alignment */
+  }
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-container {
+    padding-left: 1rem; /* Keep it aligned on smaller screens */
+  }
 }
 
 .theme-toggle {
-  position: fixed;
+  /* position: fixed;
   top: 0.3em;
-  left: 1em;
+  left: 1em; */
   padding: 0.3rem;
   border-radius: var(--radius);
   /* border: 1px solid var(--border-color); */
