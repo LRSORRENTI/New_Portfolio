@@ -1525,7 +1525,7 @@ textarea.form-input::-webkit-resizer {
 .form-btn {
   position: relative;
   width: 100%;
-  background: var(--dark-grey);
+  /* background: var(--dark-grey); */
   color: var(--white);
   display: flex;
   justify-content: center;
@@ -1555,11 +1555,12 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-btn:hover {
-  background: var(--blue);
+
+  color: var(--blue)
 }
 
 .form-btn:hover::before {
-  background: var(--light-grey);
+  /* background: var(--light-grey); */
 }
 
 .form-btn:disabled {
