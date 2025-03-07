@@ -509,12 +509,14 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  transition: var(--transition-2);
 }
 
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  transition: var(--transition-2);
 }
 
 .info-content .name {
@@ -710,6 +712,10 @@ an svg in the index.html line 67ish */
 /*-----------------------------------*\
   #ABOUT
 \*-----------------------------------*/
+
+.about {
+  transition: var(--transition-2);
+}
 
 .about .article-title {
   margin-bottom: 15px;
@@ -1557,8 +1563,7 @@ textarea.form-input::-webkit-resizer {
 }
 
 .form-btn:hover {
-
-  color: var(--blue)
+  color: var(--blue);
 }
 
 .form-btn:hover::before {
@@ -1732,9 +1737,11 @@ textarea.form-input::-webkit-resizer {
 
   .navbar {
     border-radius: 20px 20px 0 0;
+    transition: var(--transition-2);
   }
 
   .navbar-list {
+    transition: var(--transition-2);
     gap: 20px;
   }
 
