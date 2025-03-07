@@ -301,6 +301,8 @@ body {
 .theme-toggle .dark-icon {
   filter: grayscale(100%);
   transition: filter 0.3s ease;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
 }
 
 /* Remove grayscale when hovered */
