@@ -42,6 +42,70 @@
   -->
     <link rel="stylesheet" href="./css/style.css" />
 
+    <!-- Modal CSS -->
+    <!-- <style>
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        background-color: var(--background-secondary, #fff);
+        color: var(--foreground-primary, #333);
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        max-width: 400px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .modal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .modal-btn {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-cancel {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+
+      .btn-email {
+        background-color: var(--primary, #5cb85c);
+        /* color: white; */
+      }
+
+      .btn-cancel:hover {
+        background-color: #d0d0d0;
+      }
+
+      .btn-email:hover {
+        background-color: var(--primary-dark, #4cae4c);
+      }
+
+      .email-link {
+        cursor: pointer;
+      }
+    </style> -->
+
     <!--
     - google font link
   -->
@@ -74,12 +138,12 @@
     <!--
     - #MAIN
   -->
-  <div class="theme-toggle-container">
-    <button class="theme-toggle" aria-label="Toggle theme">
-      <span class="light-icon">🔆</span>
-      <span class="dark-icon" style="display: none">🌙</span>
-    </button>
-  </div>
+    <div class="theme-toggle-container">
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <span class="light-icon">🔆</span>
+        <span class="dark-icon" style="display: none">🌙</span>
+      </button>
+    </div>
     <main>
       <!--
       - #SIDEBAR
@@ -124,7 +188,10 @@
               <div class="contact-info">
                 <p class="contact-title">Email</p>
 
-                <a href="mailto:luke-sorrenti@outlook.com" class="contact-link"
+                <a
+                  href="#"
+                  class="contact-link email-link"
+                  id="sidebarEmailLink"
                   >luke-sorrenti@outlook.com</a
                 >
               </div>
@@ -2386,29 +2453,25 @@
               </button>
             </form>
           </section>
-
-          <!-- Modal -->
-          <div class="modal" id="emailModal">
-            <div class="modal-content">
-              <p>
-                Clicking "Email" will open your email client and start a message
-                to Luke
-                <br /><br />
-                Would you like to continue?
-              </p>
-              <div class="modal-buttons">
-                <button class="modal-btn btn-cancel" id="cancelBtn">
-                  Cancel
-                </button>
-                <button class="modal-btn btn-email" id="confirmBtn">
-                  Email
-                </button>
-              </div>
-            </div>
-          </div>
         </article>
       </div>
     </main>
+
+    <!-- Modal - Fixed structure -->
+    <div class="modal" id="emailModal">
+      <div class="modal-content">
+        <p>
+          Clicking "Email" will open your email client and start a message to
+          Luke
+          <br /><br />
+          Would you like to continue?
+        </p>
+        <div class="modal-buttons">
+          <button class="modal-btn btn-cancel" id="cancelBtn">Cancel</button>
+          <button class="modal-btn btn-email" id="confirmBtn">Email</button>
+        </div>
+      </div>
+    </div>
 
     <!--
     - custom js link
@@ -2426,5 +2489,50 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
+    <script>
+      // Email modal functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const emailModal = document.getElementById("emailModal");
+        const confirmBtn = document.getElementById("confirmBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const sidebarEmailLink = document.getElementById("sidebarEmailLink");
+
+        // Store the email address
+        const emailAddress = "luke-sorrenti@outlook.com";
+
+        // Show modal when sidebar email link is clicked
+        if (sidebarEmailLink) {
+          sidebarEmailLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            // Make sure the modal is visible regardless of which section is active
+            emailModal.style.display = "flex";
+            emailModal.style.zIndex = "9999"; // Ensure it's above everything else
+          });
+        }
+
+        // Handle confirm button click
+        if (confirmBtn) {
+          confirmBtn.addEventListener("click", function () {
+            window.location.href = `mailto:${emailAddress}`;
+            emailModal.style.display = "none";
+          });
+        }
+
+        // Handle cancel button click
+        if (cancelBtn) {
+          cancelBtn.addEventListener("click", function () {
+            emailModal.style.display = "none";
+          });
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (e) {
+          if (e.target === emailModal) {
+            emailModal.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
