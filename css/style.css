@@ -2348,7 +2348,7 @@ textarea.form-input::-webkit-resizer {
   /* color: var(--dark-grey); */
   transition: 0.4s ease;
   font-weight: 900;
-  border: 1px solid #d76e6e;
+  border: 1px solid var(--accent-color);
 }
 
 .btn-email {
@@ -2356,15 +2356,15 @@ textarea.form-input::-webkit-resizer {
   /* color: var(--dark-grey); */
   transition: 0.4s ease;
   font-weight: 900;
-  border: 1px solid #63d099;
+  border: 1px solid var(--accent-color);
 }
 
 .btn-cancel:hover {
-  background-color: #d76e6e;
+  background-color: var(--blue);
   color: #fff;
 }
 
 .btn-email:hover {
-  background-color: #63d099;
+  background-color: var(--blue);
   color: #fff;
 }
