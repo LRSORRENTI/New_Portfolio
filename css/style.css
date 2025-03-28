@@ -567,11 +567,11 @@ an svg in the index.html line 67ish */
   border-radius: 0 15px;
   font-size: 22px;
   color: var(--white);
-  background: var(--border-gradient-onyx);
+  /* background: var(--border-gradient-onyx); */
   padding-left: 12px;
   padding-right: 12px;
   padding-top: 5px;
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-3);
   transition: var(--transition-1);
   z-index: 1;
 }
