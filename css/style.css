@@ -296,6 +296,10 @@ html {
 body {
   background: var(--dark-grey);
 }
+.light-icon,
+.dark-icon {
+  padding: 2px;
+}
 
 .theme-toggle .light-icon,
 .theme-toggle .dark-icon {
