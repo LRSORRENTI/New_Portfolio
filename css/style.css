@@ -500,7 +500,7 @@ main {
 }
 
 .sidebar.active {
-  max-height: 415px;
+  max-height: 425px;
 }
 
 .sidebar-info {
@@ -1326,7 +1326,9 @@ an svg in the index.html line 67ish */
   left: 50%;
   transform: translate(-50%, -50%) scale(var(--scale));
   font-size: 20px;
-  padding: 18px;
+  padding-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 12px;
   opacity: 0;
   z-index: 1;
