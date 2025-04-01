@@ -673,10 +673,12 @@ an svg in the index.html line 67ish */
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 18px;
+  transition: all 0.2s ease-in-out;
 }
 
 .social-item .social-link:hover {
   color: var(--blue);
+  transition: all 0.2s ease-in-out;
 }
 
 /*-----------------------------------*\
