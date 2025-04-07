@@ -99,7 +99,7 @@
    */
 
   /* font-family */
-  --ff-poppins: "Poppins", sans-serif;
+  --ff-poppins: 'Inter', sans-serif;
 
   /* font-size */
   --fs-1: 24px;
@@ -1155,7 +1155,6 @@ an svg in the index.html line 67ish */
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
-  font-size: 16px;
 }
 
 /**
